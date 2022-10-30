@@ -4,4 +4,12 @@ Adds a tiddler editor button that converts the selected URL into a prettylink.
 
 For example, if the URL, http://tiddlywiki.com is selected in the tiddler editor, clicking the prettylink button would replace the URL with the following wiki text: 
 
-[[TiddlyWiki — a non-linear personal web notebook|http://tiddlywiki.com]] ,,(tiddlywiki.com),, 
+```
+[[TiddlyWiki — a non-linear personal web notebook|http://tiddlywiki.com]] ,,(tiddlywiki.com),,
+```
+
+Which renders as:
+
+[[TiddlyWiki — a non-linear personal web notebook|http://tiddlywiki.com]] ,,(tiddlywiki.com),,
+
+

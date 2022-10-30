@@ -6,3 +6,10 @@ list-before: $:/core/ui/EditorToolbar/mono-block
 shortcuts:
 title: $:/plugins/oveek/prettylink/ui/EditorToolbar/prettylink
 tags: $:/tags/EditorToolbar
+
+<$action-sendmessage
+	$message="tm-edit-text-operation"
+	$param="prettylink-selection"
+	prefix="[["
+	suffix="]]"
+/>

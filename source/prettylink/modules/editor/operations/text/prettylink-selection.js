@@ -12,10 +12,10 @@ Text editor operation to wrap the selection with the specified prefix and suffix
 /*global $tw: false */
 "use strict";
 
-exports["wrap-selection"] = function(event,operation) {
+exports["prettylink-selection"] = function(event,operation) {
 
 
-
+    console.log("Hello from prettylink.");
 
 };
 
