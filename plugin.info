@@ -1,0 +1,6 @@
+{
+    "title": "$:/plugins/oveek/prettylink",
+    "name": "PrettyLink",
+    "description": "Turn selected HTTP URL in tiddler editor into a pretty link",
+    "list": "readme"
+}
