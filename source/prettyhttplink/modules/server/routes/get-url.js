@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/oveek/prettylink/modules/server/routes/get-url.js
+title: $:/plugins/oveek/prettyhttplink/modules/server/routes/get-url.js
 type: application/javascript
 module-type: route
 
@@ -14,7 +14,7 @@ GET /recipes/default/tiddlers/:title
 
 exports.method = "GET";
 
-exports.path = /^\/recipes\/default\/tiddlers\/(.+)$/;
+exports.path = /^\/url/prettylink$/;
 
 exports.handler = function(request,response,state) {
 

@@ -1,5 +1,5 @@
 /*\
-title: $:/core/modules/editor/operations/text/wrap-selection.js
+title: $:/plugins/oveek/modules/editor/operations/text/prettyhttplink-selection.js
 type: application/javascript
 module-type: texteditoroperation
 
@@ -12,10 +12,10 @@ Text editor operation to wrap the selection with the specified prefix and suffix
 /*global $tw: false */
 "use strict";
 
-exports["prettylink-selection"] = function(event,operation) {
+exports["prettyhttplink-selection"] = function(event,operation) {
 
 
-    console.log("Hello from prettylink.");
+    console.log("Hello from prettyhttplink.");
 
 };
 

@@ -1,0 +1,15 @@
+caption: {{$:/plugins/oveek/prettyhttplink/language/Buttons/PrettyHttplink/Caption}}
+condition: [<targetTiddler>!has[type]] [<targetTiddler>type[text/vnd.tiddlywiki]]
+description: {{$:plugins/oveek/prettyhttplink/language/Buttons/PrettyHttpLink/Hint}}
+icon: $:/plugins/oveek/prettyhttplink/images/prettyhttplink
+list-before: $:/core/ui/EditorToolbar/mono-block
+shortcuts:
+title: $:/plugins/oveek/prettyhttplink/ui/EditorToolbar/prettyhttplink
+tags: $:/tags/EditorToolbar
+
+<$action-sendmessage
+	$message="tm-edit-text-operation"
+	$param="prettyhttplink-selection"
+	prefix="[["
+	suffix="]]"
+/>
