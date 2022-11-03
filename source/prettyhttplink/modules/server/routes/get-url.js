@@ -12,12 +12,32 @@ GET /recipes/default/tiddlers/:title
 /*global $tw: false */
 "use strict";
 
-exports.method = "GET";
+exports.method = "POST";
 
-exports.path = /^\/url/prettylink$/;
+exports.path = /^\/url\/prettyhttplink$/;
 
 exports.handler = function(request,response,state) {
+    var http = require("http");
+    var https = require("https");
+    var reqData = $tw.utils.parseJSONSafe(state.data);
+    var urlInfo = {};
+    urlInfo.url = reqData.targeturl;
+    urlInfo.title = "test link title";
 
+    var responseHtml = "";
+
+    https.get(reqData.targeturl, (response) => {
+        console.log(response);
+        var body = "";
+        response.on('readable', () => {
+            body += response.read();
+        })
+        response.on('end', () => {
+            console.log(body);
+        })
+    });
+
+    state.sendResponse(200, {"Content-Type": "application/json"}, JSON.stringify(urlInfo), "utf8");
 };
 
 }());
