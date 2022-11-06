@@ -18,21 +18,24 @@ exports["prettyhttplink-selection"] = function(event,operation) {
         targeturl: operation.selection
     }
 
-    console.log("Hello from prettyhttplink.");
-    $tw.utils.httpRequest({
-        url: "/url/prettyhttplink",
-        type: "POST",
-        data: JSON.stringify(payload),
-        headers: {
-            "accept": "application/json",
-            "content-type": "application/json"
-        },
-        callback: function(err, response, httpRequest) {
-            console.log(response);
-        }
+    const request = new XMLHttpRequest();
+    request.open('POST', '/url/prettyhttplink', false);
+    request.setRequestHeader('accept', 'application/json');
+    request.setRequestHeader('content-type', 'application/json');
+    request.setRequestHeader('X-Requested-With', 'TiddlyWiki');
+    request.send(JSON.stringify(payload));
 
-    })
-
+    if (request.status === 200) {
+        var urlInfo = JSON.parse(request.responseText);
+        var title = urlInfo.title.replaceAll(/\|/g, '-');
+        var domain = urlInfo.domain.replace(/www\./,'');
+        operation.replacement = "[[" + title + "|" + urlInfo.url + "]] " + ",,(" + domain + "),,";
+        operation.cutStart = operation.selStart;
+        operation.cutEnd = operation.selEnd;
+        operation.newSelStart = operation.selStart;
+        operation.newSelEnd = operation.selStart + operation.replacement.length;
+        console.log(request.responseText);
+    }
 };
 
 })();
